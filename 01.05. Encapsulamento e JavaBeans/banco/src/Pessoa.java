@@ -16,7 +16,13 @@ public class Pessoa {
     }
 
     public void setDocumento(String documento) {
-        this.documento = documento;
-    }
+        //Podemos adicionar alguma lógica dentro do setter.
+        //Se documento não for (null) e o documento for igual a 11, esse código e executado.
+        if ( documento != null && documento.length() == 11) {
+            this.documento = documento;
+        }else {
+            System.out.println("O documento deve conter 11 digitos");
+        }
 
+    }
 }

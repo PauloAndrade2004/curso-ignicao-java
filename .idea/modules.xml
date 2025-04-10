@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01.02. Fundamentos da linguagem Java/01.02. Fundamentos da linguagem Java.iml" filepath="$PROJECT_DIR$/01.02. Fundamentos da linguagem Java/01.02. Fundamentos da linguagem Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01.03. Orientação a objetos, classes e objetos/01.03. Orientação a objetos, classes e objetos.iml" filepath="$PROJECT_DIR$/01.03. Orientação a objetos, classes e objetos/01.03. Orientação a objetos, classes e objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01.04. Métodos, construtores e sobrecarga/01.04. Métodos, construtores e sobrecarga.iml" filepath="$PROJECT_DIR$/01.04. Métodos, construtores e sobrecarga/01.04. Métodos, construtores e sobrecarga.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01.05. Encapsulamento e JavaBeans/01.05. Encapsulamento e JavaBeans.iml" filepath="$PROJECT_DIR$/01.05. Encapsulamento e JavaBeans/01.05. Encapsulamento e JavaBeans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01.05. Pacotes/01.05. Pacotes.iml" filepath="$PROJECT_DIR$/01.05. Pacotes/01.05. Pacotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/curso-ignicao-java.iml" filepath="$PROJECT_DIR$/.idea/curso-ignicao-java.iml" />
+    </modules>
+  </component>
+</project>

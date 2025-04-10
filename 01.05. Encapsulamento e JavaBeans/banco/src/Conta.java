@@ -1,47 +1,52 @@
-import java.util.Objects;
-
 public class Conta {
 
-    private Pessoa titular;
+    private Pessoa titular;// estamos usando a composição
     private int agencia;
     private int numero;
     private double saldo;
 
-    Conta() {
-    }
+//    public Conta() {
+//        //Construtor Vazio
+//    }
 
-    Conta(Pessoa titular, int agencia, int numero) {
-        Objects.requireNonNull(titular);
-
+    public Conta(Pessoa titular, int agencia, int numero, double saldo) {
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
+        this.saldo = saldo;
     }
 
-    void depositar(double valor) {
+    //como implementar um metodo na classe?
+    public void depositarDinhero(double valor /*Variavel local (valor) */) {
         if (valor <= 0) {
-            throw new IllegalArgumentException("Valor deve ser maior que 0");
+            throw  new IllegalArgumentException("Valor para deposito deve ser maior que zero");
         }
-        saldo = saldo + valor;
+        saldo += valor;
+        //Quando eu utilizar o metodo depositarDinheiro, as mensagens que escrevi irão ser exibidas.
+        System.out.println("Deposito realizado com sucesso, no valor de: " + valor);
+        System.out.println("Saldo apos o deposito: R$ " + saldo);
+
     }
 
-    void sacar(double valor) {
-        if (valor <= 0) {
-            throw new IllegalArgumentException("Valor deve ser maior que 0");
+    public void sacarDinheiro(double valor) {
+        if (valor <=saldo) {
+            saldo -= valor;
+            System.out.println("Saque realizado com sucesso");
+        }else {
+            System.out.println("Valor solicitado e insuficiente");
         }
 
-        if (saldo - valor < 0) {
-            throw new IllegalStateException("Saldo insuficiente");
-        }
-        saldo = saldo - valor;
+        System.out.println("Saldo final apos a realizacao do saque: R$ " + saldo);
     }
 
-    void sacar(double valor, double taxaSaque) {
-        sacar(valor + taxaSaque);
-    }
 
+    // Getters e Setters
     public Pessoa getTitular() {
         return titular;
+    }
+
+    public void setTitular(Pessoa titular) {
+        this.titular = titular;
     }
 
     public int getAgencia() {
@@ -56,4 +61,9 @@ public class Conta {
         return saldo;
     }
 
+
+
+
+
 }
+
