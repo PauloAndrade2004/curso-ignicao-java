@@ -20,7 +20,7 @@ public abstract class Conta {
             throw new IllegalArgumentException("O valor do saque é inválido.");
         }
         this.saldo -= valor;
-        System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
+        //System.out.println("Saque de R$ " + valor + " realizado com sucesso.");
     }
 
     // Método concreto para depósito
@@ -29,7 +29,7 @@ public abstract class Conta {
             throw new IllegalArgumentException("O valor do depósito deve ser maior que zero.");
         }
         this.saldo += valor;
-        System.out.println("Depósito de R$ " + valor + " realizado com sucesso.");
+
     }
 
     // Getters e Setters

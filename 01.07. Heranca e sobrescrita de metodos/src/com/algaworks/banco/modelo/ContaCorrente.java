@@ -12,17 +12,21 @@ public class ContaCorrente extends Conta {
         if (valor > getSaldo() || valor <= 0) {
             throw new IllegalArgumentException("O valor do saque é inválido.");
         }
-        // Adicionando uma taxa de saque específica para ContaCorrente
-        double taxa = 0.10; // Exemplo de taxa fixa
-        double valorComTaxa = valor + taxa;
 
-        if (valorComTaxa > getSaldo()) {
-            throw new IllegalArgumentException("Saldo insuficiente para cobrir o saque e a taxa.");
+       setSaldo(getSaldo() - valor);
+
+        // System.out.println("Saldo inicial: R$ " + saldoInicial);
+        System.out.println("Saque de R$ " + valor + " realizado com sucesso ");
+        //System.out.println("Saldo após o saque: R$ " + getSaldo());
+    }
+
+    @Override
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("O valor do depósito deve ser maior que zero.");
         }
-
-        setSaldo(getSaldo() - valorComTaxa);
-        System.out.println("Saque de R$ " + valor + " realizado com sucesso (taxa de R$ " + taxa + " aplicada).");
-        System.out.println("Saldo após o saque: R$ " + getSaldo());
+        System.out.println("Depósito de R$ " + valor + " realizado com sucesso ");
+        super.depositar(valor);
     }
 
     @Override

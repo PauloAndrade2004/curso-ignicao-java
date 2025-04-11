@@ -1,36 +1,34 @@
 package com.algaworks.banco.app;
 
-import com.algaworks.banco.modelo.Conta;
-import com.algaworks.banco.modelo.ContaCorrente;
-import com.algaworks.banco.modelo.Pessoa;
+import com.algaworks.banco.modelo.*;
 
 public class Principal {
-
     public static void main(String[] args) {
+        // 1. Criar uma pessoa
+        Pessoa contaPaulo = new Pessoa();
+        contaPaulo.setNome("Joao");
+        contaPaulo.setDocumento("12345678901");
 
-        System.out.println("============================================");
-        Pessoa titular1 = new Pessoa();
-        titular1.setNome("Gabrielle");
-        titular1.setDocumento("50063614847");
-
-        ContaCorrente contaPaulo = new ContaCorrente(titular1, 555, 55,1000);
-        System.out.println(contaPaulo); //chamando o toString, da classe ContaCorrente
-        contaPaulo.depositarDinhero(500);
-        contaPaulo.sacarDinheiro(500);
-        System.out.println("============================================");
-
-        System.out.println("\n============================================");
-        Pessoa titular2 = new Pessoa();
-        titular2.setNome("Paulo");
-        titular2.setDocumento("50063614847");
-
-        ContaCorrente contaGabrielle = new ContaCorrente(titular2, 666, 224, 1000);
-        System.out.println(contaGabrielle); //chamando o toString, da classe ContaCorrente
-        contaGabrielle.sacarDinheiro(500);
-        System.out.println("============================================");
+        // 2. Criar ContaCorrente com saldo inicial
+        ContaCorrente contaCorrente = new ContaCorrente(contaPaulo, 123, 1001, 1000.0);
+        System.out.println(contaCorrente.toString());
+        contaCorrente.depositar(1000.0);
+        contaCorrente.sacar(1000.0);
 
 
+        // 3. Criar ContaInvestimento com saldo inicial zero
+        //ContaInvestimento contaInvestimento = new ContaInvestimento(contaPaulo, 123, 2001, 0.0);
+
+        // 4. Aplicar investimento de R$ 500,00
+        //contaInvestimento.aplicaRendimento(contaCorrente, 500.0);
+
+        // 5. Calcular o rendimento (5% sobre valor investido)
+        //double rendimento = contaInvestimento.calcularRendimento();
+
+        // 6. Mostrar os resultados
+        System.out.println("\n==================== RESUMO ====================");
+        System.out.println("Titular: " + contaPaulo.getNome());
+        System.out.println("Saldo da Conta Corrente: R$ " + contaCorrente.getSaldo());
 
     }
-
 }
